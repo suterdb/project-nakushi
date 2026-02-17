@@ -13,12 +13,33 @@ For a given incubation `<name>`:
    - NEXT_ARTIFACTS (ordered)
    - any missing prerequisites
 
+---
+
+## 0.1) Non‑negotiable: Stage file auto‑scaffolding
+If `/incubations/<name>/stage.md` is missing, it MUST be created **before** any evaluation or next‑step proposal.
+
+Rules:
+- Source template: `/incubations/_template/stage.md`
+- Replace `<INCUBATION_NAME>` with `<name>`
+- Initialize `CURRENT_STAGE`:
+  - If `problem.md` is missing → Stage 00
+  - If `problem.md` exists but `mvp-scope.md` or `experiment-notes.md` missing → Stage 10 (incomplete)
+  - If all Stage 10 required files exist → Stage 10
+- Add a "Last updated" date
+
+Recommended execution (repo-native):
+- `scripts/nakushi-init-incubation.sh <name>` (creates branch + commit + push + PR command)
+
+---
+
 ## 1) Default rule: Propose → Confirm → Generate
 - AI must propose next artifacts first.
 - User confirms scope/ordering.
 - AI generates drafts into correct paths.
 
-> Exception: purely mechanical files (templates, empty scaffolds) may be generated without confirm if user asked for it.
+> Exception: purely mechanical files (scaffolds, templates) may be generated without confirm if user requested it.
+
+---
 
 ## 2) ADR sequencing rule (Stage 20 baseline)
 Default order:
@@ -27,12 +48,16 @@ Default order:
 3. data model
 4. deployment
 
+---
+
 ## 3) Minimum "next artifacts" per stage
 - Stage 00 → `mvp-scope.md`, `experiment-notes.md`, `stage.md`
 - Stage 10 → baseline ADR set
 - Stage 20 → `implementation-plan.md`, `vertical-slice-01.md`, issues
 - Stage 30 → weekly report, merge slice
 - Stage 40 → validation results + decision (spin-off / continue / archive)
+
+---
 
 ## 4) What counts as "done"
 A file is "done" when:
