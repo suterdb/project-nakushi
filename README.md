@@ -84,6 +84,27 @@ Each must fit within one page.
 
 ------------------------------------------------------------------------
 
+## Documentation / 문서 작성 규칙
+
+All documentation artifacts MUST include bilingual content:
+- **Primary language**: English (for clarity and AI compatibility)
+- **Secondary language**: 한글 (for project stakeholders and team communication)
+
+**Structure**:
+1. English section (H1 or H2 headers)
+2. Korean translation section (clearly separated, prefixed with "한글 버전:" or same header repeated)
+
+**Rationale**:
+- Ensures accessibility for all team members
+- Reduces context switching in asynchronous work
+- AI can validate translation consistency
+
+**Exception**:
+- Template files (e.g., `_template/`) may be English-only
+- Internal notes (e.g., `experiment-notes.md`) may have single language if clearly documented
+
+------------------------------------------------------------------------
+
 ## Prompts (/prompts)
 
 Prompts are versioned assets.
