@@ -8,6 +8,6 @@ It enables AI agents to see *all incubations* and their current stage at a glanc
 - This file is a convenience index; update manually or via automation.
 
 | Incubation | Current Stage | Owner | Notes |
-|---|---:|---|---|
-| (add) |  |  |  |
+|---|---|---|---|
+| Linet | Stage 10 — MVP Defined | - | 한 줄 입력 커뮤니티. Next: Tech Baseline ADRs |
 

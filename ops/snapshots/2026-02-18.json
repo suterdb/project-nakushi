@@ -1,0 +1,17 @@
+{
+  "generated_at": "2026-02-18",
+  "git": {
+    "branch": "main",
+    "commit": "24fc6ab",
+    "last_message": "Add Raw Plan of Linet."
+  },
+  "incubations": [
+    {
+      "name": "Linet",
+      "current_stage": "Stage 10 — MVP Defined",
+      "next_stage": "Stage 20 — Technical Baseline Fixed",
+      "checklist_progress": "4/8",
+      "files": "experiment-notes.md,mvp-scope.md,problem.md,raw-plan.md,stage.md"
+    }
+  ]
+}
