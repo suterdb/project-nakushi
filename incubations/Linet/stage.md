@@ -1,28 +1,35 @@
 # Stage Status — Linet
 
-CURRENT_STAGE: Stage 10 — MVP Defined
-NEXT_STAGE: Stage 20 — Technical Baseline Fixed
+CURRENT_STAGE: Stage 20 — Technical Baseline Fixed
+NEXT_STAGE: Stage 30 — Execution Ready
 
 ## Required files (per current stage)
 - [x] problem.md
 - [x] mvp-scope.md
 - [x] experiment-notes.md
 - [x] stage.md
+- [x] /ops/decisions/ADR-001-tech-stack.md
+- [x] /ops/decisions/ADR-002-architecture.md
+- [x] /ops/decisions/ADR-003-data-model.md
+- [x] /ops/decisions/ADR-004-deployment.md
 
 ## Next artifacts (ordered)
-- [ ] /ops/decisions/ADR-001-tech-stack.md
-- [ ] /ops/decisions/ADR-002-architecture.md
-- [ ] /ops/decisions/ADR-003-data-model.md
-- [ ] /ops/decisions/ADR-004-deployment.md
-
-## Open questions
-- 백엔드 스택 결정 (Spring vs Node.js vs other)
-- DB 선택 (RDB vs NoSQL — 태그/멘션 구조 고려)
-- 실시간 피드 구현 방식 (WebSocket vs SSE vs polling)
-- LLM 태깅 API 선택 및 비용 모델
+- [ ] /incubations/Linet/implementation-plan.md
+- [ ] /incubations/Linet/vertical-slice-01.md
+- [ ] GitHub Issues breakdown (8–12개)
 
 ## Decision log (links)
-- (add ADR links after Stage 20 작업 시작)
+- [ADR-001 Tech Stack](/ops/decisions/ADR-001-tech-stack.md) — Next.js + Bedrock + 폴링
+- [ADR-002 Architecture](/ops/decisions/ADR-002-architecture.md) — CDK 공유 스택 + Next.js 모놀리스
+- [ADR-003 Data Model](/ops/decisions/ADR-003-data-model.md) — RDS PostgreSQL + Prisma
+- [ADR-004 Deployment](/ops/decisions/ADR-004-deployment.md) — CDK + Amplify 자동화
+
+## Open questions (resolved)
+- [x] 백엔드 스택 → Next.js (App Router)
+- [x] DB → RDS PostgreSQL (shared-stack)
+- [x] 실시간 피드 → 폴링 5초 (MVP), AppSync는 Stage 40 검토
+- [x] LLM 태깅 → Amazon Bedrock (Claude Haiku)
+- [x] 배포 → AWS CDK + Amplify 자동화
 
 ## Last updated
-- 2026-02-18
+- 2026-04-01

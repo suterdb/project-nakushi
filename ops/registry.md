@@ -9,5 +9,5 @@ It enables AI agents to see *all incubations* and their current stage at a glanc
 
 | Incubation | Current Stage | Owner | Notes |
 |---|---|---|---|
-| Linet | Stage 10 — MVP Defined | - | 한 줄 입력 커뮤니티. Next: Tech Baseline ADRs |
+| Linet | Stage 20 — Technical Baseline Fixed | - | Next.js + RDS PostgreSQL + CDK. Next: implementation-plan.md |
 
