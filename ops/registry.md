@@ -9,5 +9,5 @@ It enables AI agents to see *all incubations* and their current stage at a glanc
 
 | Incubation | Current Stage | Owner | Notes |
 |---|---|---|---|
-| Linet | Stage 20 — Technical Baseline Fixed | - | Next.js + RDS PostgreSQL + CDK. Next: implementation-plan.md |
+| Linet | Stage 30 — Execution Ready | - | 11개 이슈 정의 완료. Next: CDK 인프라 + VS-01 구현 |
 
