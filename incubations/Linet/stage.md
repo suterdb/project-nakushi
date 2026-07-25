@@ -19,15 +19,16 @@ NEXT_STAGE: Stage 30 — Execution Ready
 - [x] MVP has a minimal deploy plan — evidence: `ADR-004-deployment.md` "GitHub Actions(OIDC) → ECR → EC2(Tailscale) 경로"
 
 ## Next artifacts (ordered)
-- [ ] `spec.md` (문제+MVP+ADR 종합 — 화면/API/데이터모델. `/dev/Linet`의 Phase 2 블로커인 "나크시 Linet 기획서 경로"를 해소하는 파일)
+- [x] `spec.md` (문제+MVP+ADR 종합 — 화면/API/데이터모델. `/dev/Linet`의 Phase 2 블로커인 "나크시 Linet 기획서 경로"를 해소하는 파일)
 - [ ] `implementation-plan.md`
 - [ ] `vertical-slice-01.md`
 - [ ] GitHub Issues 재정리 (기존 #5–#15 재검토 반영)
 
 ## Open questions
 - ~~기존 `/infra` CDK 코드 재검토~~ → **해결**: ADR-002/004에서 Nakushi 공유 인프라(CDK) 방식을 채택하지 않기로 결정. `/infra`의 기존 CDK 코드는 이번 Linet 재구현에는 사용하지 않음 (다른 인큐베이션에서 재사용 여지는 남겨둠, 삭제하지 않음)
-- 기존 GitHub Issues [#5–#15](https://github.com/suterdb/project-nakushi/issues?q=is%3Aissue+label%3Alinet)는 새 스택(Spring Boot) 기준으로 내용이 안 맞으므로, `spec.md`/`implementation-plan.md` 작성 후 재정리 필요
-- `spec.md` 완성 후 `/dev/Linet`의 `linet-aws-배포-작업계획.md` "빠진 입력값 1번"에 경로를 채워 Phase 2 블로커 해소
+- 기존 GitHub Issues [#5–#15](https://github.com/suterdb/project-nakushi/issues?q=is%3Aissue+label%3Alinet)는 새 스택(Spring Boot) 기준으로 내용이 안 맞으므로, `implementation-plan.md` 작성 후 재정리 필요
+- ~~`spec.md` 완성 후 `/dev/Linet`의 "빠진 입력값 1번" 해소~~ → **해결**: `spec.md` 작성 완료, 경로는 `project-nakushi/incubations/Linet/spec.md`. `/dev/Linet`의 `linet-aws-배포-작업계획.md`에 이 경로를 반영하는 건 해당 리포 쪽에서 별도로 처리 필요 (동시 작업 중이라 여기서 직접 수정하지 않음)
+- RSS 폴링 주기(10분 잠정), LLM 벤더는 `spec.md`에 열린 질문으로 남아있음 — `implementation-plan.md`에서 구체화
 
 ## Decision log (links)
 - [ADR-001 Tech Stack](/ops/decisions/ADR-001-tech-stack.md) — Spring Boot(Hexagonal Architecture template) + MySQL + Flyway
