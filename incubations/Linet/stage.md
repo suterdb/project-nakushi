@@ -1,22 +1,40 @@
 # Stage Status — Linet
 
-CURRENT_STAGE: Stage 00 — Problem Defined
-NEXT_STAGE: Stage 10 — MVP Defined
+CURRENT_STAGE: Stage 20 — Technical Baseline Fixed
+NEXT_STAGE: Stage 30 — Execution Ready
 
 ## Required files (per current stage)
 - [x] problem.md
 - [x] mvp-scope.md
+- [x] experiment-notes.md
+- [x] stage.md
+- [x] /ops/decisions/ADR-001-tech-stack.md
+- [x] /ops/decisions/ADR-002-architecture.md
+- [x] /ops/decisions/ADR-003-data-model.md
+- [x] /ops/decisions/ADR-004-deployment.md
+
+## Exit criteria check (Stage 20)
+- [x] chosen stack is explicit — evidence: `ADR-001-tech-stack.md` "Java 21, Spring Boot 3.x ... DB: MySQL 8.0 ... `@RestController` 채택"
+- [x] rollback notes exist for risky decisions — evidence: 4개 ADR 전부 "Rollback Plan" 섹션 존재 (예: ADR-004 "EC2 인스턴스 재기동/재생성으로 대응 ... 이전 ECR 이미지 태그로 롤백")
+- [x] MVP has a minimal deploy plan — evidence: `ADR-004-deployment.md` "GitHub Actions(OIDC) → ECR → EC2(Tailscale) 경로"
 
 ## Next artifacts (ordered)
-- [ ] experiment-notes.md
+- [x] `spec.md` (문제+MVP+ADR 종합 — 화면/API/데이터모델. `/dev/Linet`의 Phase 2 블로커인 "나크시 Linet 기획서 경로"를 해소하는 파일)
+- [ ] `implementation-plan.md`
+- [ ] `vertical-slice-01.md`
+- [ ] GitHub Issues 재정리 (기존 #5–#15 재검토 반영)
 
 ## Open questions
-- 재시작 사유: 스프링 부트 보일러플레이트 기반 빠른 MVP 검증으로 방향 전환 예정 — 이전 Stage 10~30 산출물(문제정의/MVP스코프/ADR 4종/구현계획/수직슬라이스/이슈목록)은 삭제하고 처음부터 다시 진행
-- 기존 GitHub Issues [#5–#15](https://github.com/suterdb/project-nakushi/issues?q=is%3Aissue+label%3Alinet)는 그대로 유지 (닫지 않음) — 재검토 대상
-- 기존 `/infra` CDK 코드(Next.js + Bedrock + RDS 기반)는 그대로 유지 — 새 기술 방향(Spring Boot)과 맞는지 재검토 필요
+- ~~기존 `/infra` CDK 코드 재검토~~ → **해결**: ADR-002/004에서 Nakushi 공유 인프라(CDK) 방식을 채택하지 않기로 결정. `/infra`의 기존 CDK 코드는 이번 Linet 재구현에는 사용하지 않음 (다른 인큐베이션에서 재사용 여지는 남겨둠, 삭제하지 않음)
+- 기존 GitHub Issues [#5–#15](https://github.com/suterdb/project-nakushi/issues?q=is%3Aissue+label%3Alinet)는 새 스택(Spring Boot) 기준으로 내용이 안 맞으므로, `implementation-plan.md` 작성 후 재정리 필요
+- ~~`spec.md` 완성 후 `/dev/Linet`의 "빠진 입력값 1번" 해소~~ → **해결**: `spec.md` 작성 완료, 경로는 `project-nakushi/incubations/Linet/spec.md`. `/dev/Linet`의 `linet-aws-배포-작업계획.md`에 이 경로를 반영하는 건 해당 리포 쪽에서 별도로 처리 필요 (동시 작업 중이라 여기서 직접 수정하지 않음)
+- RSS 폴링 주기(10분 잠정), LLM 벤더는 `spec.md`에 열린 질문으로 남아있음 — `implementation-plan.md`에서 구체화
 
 ## Decision log (links)
-- (리셋됨 — 이전 ADR-001~004는 삭제됨, 새 기술 결정 시 재작성)
+- [ADR-001 Tech Stack](/ops/decisions/ADR-001-tech-stack.md) — Spring Boot(Hexagonal Architecture template) + MySQL + Flyway
+- [ADR-002 Architecture](/ops/decisions/ADR-002-architecture.md) — Hexagonal Architecture, 독립 배포(Nakushi 공유 인프라 미사용), Tailscale, 알파 단계 인증 미구현
+- [ADR-003 Data Model](/ops/decisions/ADR-003-data-model.md) — MySQL 8.0 + Spring Data + Flyway
+- [ADR-004 Deployment](/ops/decisions/ADR-004-deployment.md) — GitHub Actions(OIDC) → ECR → EC2(Tailscale)
 
 ## Last updated
-- 2026-07-25 (Stage 30 → Stage 00 리셋)
+- 2026-07-26 (Stage 10 → Stage 20 완료, `/dev/Linet` 확정값 반영)
