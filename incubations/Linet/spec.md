@@ -31,7 +31,7 @@ RSS 기반 실시간 이슈 피드(1차: KBO 뉴스)와 사용자 작성 한 줄
 
 ## Data model (summary)
 - **User**: id, device_id(익명 식별자, 쿠키/localStorage 발급) — 알파 단계는 로그인 없이 이 식별자만으로 작성자 판별·좋아요 중복 방지 처리. *추후 확장 가능: 닉네임, 로그인/인증 도입 시 이 테이블에 컬럼만 추가하고 device_id는 유지.*
-- **Content**: id, type(`ISSUE`/`WRITE`), body, source_name/source_url(ISSUE만), author_id(WRITE만, FK User), like_count, created_at
+- **Content**: id, type(`ISSUE`/`WRITE`), body, source_name/source_url(ISSUE만), author_id(WRITE만, FK User), like_count, created_at, deleted_at(nullable — soft delete. VS-01에서 확정: 삭제된 원글을 VS-03 멘션이 참조할 수 있어 hard delete 대신 채택)
 - **Tag**: id, name
 - **ContentTag**: content_id, tag_id (N:M)
 - **Mention**: id, source_content_id(멘션 작성 카드), target_content_id(멘션 대상 원본)
