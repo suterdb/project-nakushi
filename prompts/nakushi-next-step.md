@@ -29,10 +29,10 @@ Scaffolding steps:
 After scaffolding, proceed.
 
 ## Task
-1) Determine CURRENT_STAGE for the given incubation based on file existence AND content (light check).
-2) List missing required artifacts for CURRENT_STAGE (if any).
+1) Determine CURRENT_STAGE for the given incubation. For each exit-criteria bullet at the candidate stage (per `/ops/stage-map.md`), quote the specific line/section that satisfies it. A required file existing with no quotable evidence means that criterion is NOT met — do not credit the stage for it.
+2) List missing required artifacts for CURRENT_STAGE, AND list any exit criteria that are unmet despite the file existing (if any).
 3) Propose NEXT_STAGE.
-4) Propose NEXT_ARTIFACTS (ordered, minimal, executable).
+4) Propose NEXT_ARTIFACTS (ordered, minimal, executable). At Stage 20, `spec.md` comes first — it synthesizes problem/mvp-scope/ADR before `implementation-plan.md` is written.
 5) Ask only the minimum confirmation questions required.
 6) After user approval: generate drafts using templates in `/ops/templates/` and `/incubations/_template/`.
 
@@ -41,10 +41,10 @@ SCAFFOLDING:
 - performed: yes/no
 - created: (path) if yes
 CURRENT_STAGE: ...
-EVIDENCE:
-- file: ... (why it satisfies requirement)
+EVIDENCE (one line per exit-criteria bullet, quoted — not a bare file list):
+- criterion: ... — quote: "..." (file: path)
 MISSING:
-- ...
+- (files missing, and/or exit criteria unmet despite the file existing)
 NEXT_STAGE: ...
 NEXT_ARTIFACTS (ordered):
 1) path: ... — purpose: ...
