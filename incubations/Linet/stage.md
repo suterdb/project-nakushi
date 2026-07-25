@@ -20,8 +20,8 @@ NEXT_STAGE: Stage 30 — Execution Ready
 
 ## Next artifacts (ordered)
 - [x] `spec.md` (문제+MVP+ADR 종합 — 화면/API/데이터모델. `/dev/Linet`의 Phase 2 블로커인 "나크시 Linet 기획서 경로"를 해소하는 파일)
-- [ ] `implementation-plan.md`
-- [ ] `vertical-slice-01.md`
+- [x] `implementation-plan.md` (VS-01~04 순서, Flyway 마이그레이션 순서, 4주 마일스톤)
+- [ ] `vertical-slice-01.md` (VS-01: 작성 피드 최소 흐름 상세)
 - [ ] GitHub Issues 재정리 (기존 #5–#15 재검토 반영)
 
 ## Open questions
