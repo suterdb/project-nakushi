@@ -5,9 +5,9 @@ NEXT_STAGE: Stage 10 — MVP Defined
 
 ## Required files (per current stage)
 - [x] problem.md
+- [x] mvp-scope.md
 
 ## Next artifacts (ordered)
-- [ ] mvp-scope.md
 - [ ] experiment-notes.md
 
 ## Open questions
