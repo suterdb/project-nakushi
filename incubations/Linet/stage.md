@@ -12,6 +12,7 @@ NEXT_STAGE: Stage 40 — Active Build
 - [x] /ops/decisions/ADR-002-architecture.md
 - [x] /ops/decisions/ADR-003-data-model.md
 - [x] /ops/decisions/ADR-004-deployment.md
+- [x] /ops/decisions/ADR-005-frontend.md
 - [x] spec.md
 - [x] implementation-plan.md
 - [x] vertical-slice-01.md
@@ -36,6 +37,7 @@ NEXT_STAGE: Stage 40 — Active Build
 - ~~`spec.md` 완성 후 `/dev/Linet`의 "빠진 입력값 1번" 해소~~ → **해결**: 경로는 `project-nakushi/incubations/Linet/spec.md`, 반영은 해당 리포 세션에서 직접 처리
 - ~~기존 GitHub Issues #5–#15 재정리~~ → **해결**: #6~#15 전부 close, VS-01~04 기준 12개 이슈를 `suterdb/Linet`(실제 코드 리포)에 신규 생성 (`github-issues.md` 참고)
 - RSS 폴링 주기(10분 잠정), LLM 벤더는 `spec.md`에 열린 질문으로 남아있음 — 구현 중 확정 필요
+- FE 빌드 툴체인(Vite 등)/상태관리 라이브러리는 ADR-005 범위 밖 — 구현 착수 시점에 결정
 - `spec.md`에 `Content.deleted_at` 컬럼 보강됨 (VS-01 상세화 중 발견, soft delete 필요성 때문)
 
 ## Decision log (links)
@@ -43,6 +45,7 @@ NEXT_STAGE: Stage 40 — Active Build
 - [ADR-002 Architecture](/ops/decisions/ADR-002-architecture.md) — Hexagonal Architecture, 독립 배포(Nakushi 공유 인프라 미사용), Tailscale, 알파 단계 인증 미구현
 - [ADR-003 Data Model](/ops/decisions/ADR-003-data-model.md) — MySQL 8.0 + Spring Data + Flyway
 - [ADR-004 Deployment](/ops/decisions/ADR-004-deployment.md) — GitHub Actions(OIDC) → ECR → EC2(Tailscale)
+- [ADR-005 Frontend](/ops/decisions/ADR-005-frontend.md) — React SPA, `suterdb/Linet/frontend` 모노레포, 알파 단계는 같은 EC2에서 nginx로 서빙(배포 분리는 추후)
 
 ## Last updated
 - 2026-07-26 (Stage 30 exit criteria 전부 충족. Stage 40 진입은 VS-01 머지 + 주간 리포트 이후)
