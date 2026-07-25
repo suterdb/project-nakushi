@@ -26,3 +26,4 @@
 ## Infra
 - [#13 Phase 1 마무리 — H2→MySQL, OpenAPI-first 제거 확인](https://github.com/suterdb/Linet/issues/13)
 - [#14 CI/CD 파이프라인](https://github.com/suterdb/Linet/issues/14)
+- [#16 nginx 리버스 프록시 설정 (FE 정적 서빙 + /api 프록시)](https://github.com/suterdb/Linet/issues/16) — ADR-005 후속
