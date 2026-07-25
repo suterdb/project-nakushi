@@ -1,36 +1,22 @@
 # Stage Status — Linet
 
-CURRENT_STAGE: Stage 30 — Execution Ready
-NEXT_STAGE: Stage 40 — Active Build
+CURRENT_STAGE: Stage 00 — Problem Defined
+NEXT_STAGE: Stage 10 — MVP Defined
 
 ## Required files (per current stage)
 - [x] problem.md
 - [x] mvp-scope.md
-- [x] experiment-notes.md
-- [x] stage.md
-- [x] /ops/decisions/ADR-001-tech-stack.md
-- [x] /ops/decisions/ADR-002-architecture.md
-- [x] /ops/decisions/ADR-003-data-model.md
-- [x] /ops/decisions/ADR-004-deployment.md
-- [x] implementation-plan.md
-- [x] vertical-slice-01.md
-- [x] github-issues.md (11개 이슈 정의)
 
 ## Next artifacts (ordered)
-- [ ] GitHub Issues 실제 등록 (github-issues.md 기준)
-- [ ] CDK 인프라 코드 작성 (`/infra`)
-- [ ] VS-01 구현 및 머지
-- [ ] /ops/reports/2026-W16.md (주간 리포트 시작)
-
-## Decision log (links)
-- [ADR-001 Tech Stack](/ops/decisions/ADR-001-tech-stack.md) — Next.js + Bedrock + 폴링
-- [ADR-002 Architecture](/ops/decisions/ADR-002-architecture.md) — CDK 공유 스택 + Next.js 모놀리스
-- [ADR-003 Data Model](/ops/decisions/ADR-003-data-model.md) — RDS PostgreSQL + Prisma
-- [ADR-004 Deployment](/ops/decisions/ADR-004-deployment.md) — CDK + Amplify 자동화
+- [ ] experiment-notes.md
 
 ## Open questions
-- GitHub Issues 실제 등록 여부 (github-issues.md 기준 11개)
-- Next.js 앱 레포 구조 결정 (모노레포 vs 별도 레포)
+- 재시작 사유: 스프링 부트 보일러플레이트 기반 빠른 MVP 검증으로 방향 전환 예정 — 이전 Stage 10~30 산출물(문제정의/MVP스코프/ADR 4종/구현계획/수직슬라이스/이슈목록)은 삭제하고 처음부터 다시 진행
+- 기존 GitHub Issues [#5–#15](https://github.com/suterdb/project-nakushi/issues?q=is%3Aissue+label%3Alinet)는 그대로 유지 (닫지 않음) — 재검토 대상
+- 기존 `/infra` CDK 코드(Next.js + Bedrock + RDS 기반)는 그대로 유지 — 새 기술 방향(Spring Boot)과 맞는지 재검토 필요
+
+## Decision log (links)
+- (리셋됨 — 이전 ADR-001~004는 삭제됨, 새 기술 결정 시 재작성)
 
 ## Last updated
-- 2026-04-17
+- 2026-07-25 (Stage 30 → Stage 00 리셋)
