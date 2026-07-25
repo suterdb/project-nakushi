@@ -9,5 +9,5 @@ It enables AI agents to see *all incubations* and their current stage at a glanc
 
 | Incubation | Current Stage | Owner | Notes |
 |---|---|---|---|
-| Linet | Stage 00 — Problem Defined | - | 2026-07-25 리셋 (Stage 30→00). Spring Boot 보일러플레이트 방향으로 재검토. 기존 Issues #5–#15, /infra 코드는 유지 |
+| Linet | Stage 30 — Execution Ready | - | 재시작 후 재도달 (2026-07-26). spec.md/implementation-plan/VS-01 완료, GitHub Issues 재정리만 남음 |
 
