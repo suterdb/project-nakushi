@@ -38,6 +38,12 @@ RSS 기반 실시간 이슈 피드(1차: KBO 뉴스)와 사용자 작성 한 줄
 - **Like**: id, content_id, user_id (unique(content_id, user_id) — 중복 방지 및 재클릭 취소)
 - **HiddenContent**: user_id, content_id (소비자별 숨김, 원본은 그대로 존재)
 
+## Frontend
+- React SPA, BE(Spring Boot)와 코드/기술스택 완전 분리. `suterdb/Linet/frontend` 디렉토리(모노레포)에 위치
+- BE는 오직 REST API(위 API list)로만 호출 — 서버사이드 렌더링 결합 없음
+- 알파 배포: 정적 빌드 산출물을 같은 EC2에서 nginx가 서빙 (`/`→FE 정적파일, `/api/*`→Spring Boot 리버스 프록시). ADR-004의 "퍼블릭 포트 없음" 원칙 유지
+- 배포 완전 분리(퍼블릭 CDN 등)는 공개 베타 전환 시 재검토 (ADR-005 참고)
+
 ## LLM 태깅/요약 연동
 - 벤더(구체적 LLM API)는 이번 spec에서 확정하지 않는다. **외부 LLM API를 호출하는 형태**로만 구현하고, 교체 가능하도록 추상화한다.
 - ADR-001/002의 Hexagonal Architecture 구조를 그대로 활용 — `application` 계층에 `LlmTaggingPort`(인터페이스)를 정의하고, `infrastructure` 계층에 특정 벤더 adapter(예: OpenAI, Bedrock, 로컬 모델 등)를 붙이는 방식. 벤더 교체 시 adapter만 갈아끼우면 되도록 한다.
