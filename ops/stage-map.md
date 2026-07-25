@@ -9,8 +9,12 @@ This document defines the universal stages for any incubation under `/incubation
    - read this stage map
    - read the incubation's `stage.md`
    - verify required files exist
+   - **verify exit criteria with evidence** — for each exit criterion bullet, quote the specific line/section in the file that satisfies it. "File exists" is not evidence; a criterion with no supporting quote is NOT met.
    - propose the next artifacts in order
    - create drafts only after user approval (unless configured otherwise)
+
+### Exit criteria are content checks, not file-existence checks
+A stage's required files can all exist and the stage can still be invalid, if the content doesn't actually satisfy the exit criteria (e.g. `mvp-scope.md` exists but lists 5 core flows, not <=3). When evaluating CURRENT_STAGE, treat each exit-criteria bullet as a yes/no question and record the evidence in `stage.md` (see template). Do not advance CURRENT_STAGE on file presence alone.
 
 ---
 
@@ -67,6 +71,7 @@ This document defines the universal stages for any incubation under `/incubation
 - MVP has a minimal deploy plan
 
 **Next artifacts:**
+- `spec.md` — synthesizes `problem.md` + `mvp-scope.md` + the ADR set into a single consolidated reference: screen list, API list, data model summary, out-of-scope. Written BEFORE `implementation-plan.md`; the plan derives from `spec.md` rather than re-deriving from scattered files.
 - `implementation-plan.md`
 - `vertical-slice-01.md`
 - GitHub Issues breakdown (8–12)
@@ -78,10 +83,13 @@ This document defines the universal stages for any incubation under `/incubation
 
 **Required:**
 - Stage 20 artifacts
+- `spec.md`
 - `implementation-plan.md`
 - `vertical-slice-01.md`
 
 **Exit criteria:**
+- `spec.md` exists and covers screen list, API list, and data model summary (not just a stub)
+- `implementation-plan.md` traces back to `spec.md` (no undocumented screens/APIs invented mid-plan)
 - vertical slice can be built in 1–3 days
 - issue list exists and maps to plan
 

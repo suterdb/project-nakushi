@@ -7,11 +7,12 @@ For a given incubation `<name>`:
 1. Read `/ops/stage-map.md`
 2. Read `/incubations/<name>/stage.md`
 3. Verify required files exist (per CURRENT_STAGE)
-4. Output:
-   - CURRENT_STAGE (with evidence: file list)
+4. Verify exit criteria, not just file existence: for each exit-criteria bullet at CURRENT_STAGE, quote the specific line/section that satisfies it. A file existing with no supporting quote means that criterion is NOT met — do not mark it done.
+5. Output:
+   - CURRENT_STAGE (with evidence: quoted lines per exit criterion — not a bare file list)
    - NEXT_STAGE
    - NEXT_ARTIFACTS (ordered)
-   - any missing prerequisites
+   - any missing prerequisites (files missing OR exit criteria unmet despite the file existing)
 
 ---
 
@@ -53,7 +54,7 @@ Default order:
 ## 3) Minimum "next artifacts" per stage
 - Stage 00 → `mvp-scope.md`, `experiment-notes.md`, `stage.md`
 - Stage 10 → baseline ADR set
-- Stage 20 → `implementation-plan.md`, `vertical-slice-01.md`, issues
+- Stage 20 → `spec.md` (FIRST — synthesizes problem/mvp-scope/ADR before planning), then `implementation-plan.md`, `vertical-slice-01.md`, issues
 - Stage 30 → weekly report, merge slice
 - Stage 40 → validation results + decision (spin-off / continue / archive)
 
@@ -64,4 +65,6 @@ A file is "done" when:
 - it fits within 1 page
 - it has measurable criteria (when applicable)
 - it is executable (it tells the next action)
+
+`spec.md` has an additional bar: someone who has NOT read `problem.md`/`mvp-scope.md`/the ADRs must be able to build against it. Screens, APIs, and data model are stated directly in `spec.md`, not referenced back to other files.
 
